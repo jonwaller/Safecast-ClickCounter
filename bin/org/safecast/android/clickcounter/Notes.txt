@@ -1,0 +1,27 @@
+Radioactive click:
+Audible for 0.001 second
+But takes about 0.005 secs to reach zero again
+
+Jon's android = 1.6 = API 4
+
+For AudioRecord class:
+CHANNEL_CONFIGURATION_MONO = API 4 and below
+CHANNEL_IN_MONO = API 5 and above
+
+Use setPositionNotificationPeriod(160) before the while loop. 
+This should cause the callback to be called every time 160 frames are read. 
+Instead of calling process(buffer) inside of the thread that's doing the read loop, call process(buffer) from the callback. 
+Use a variable to keep track of the last read buffer so you process the right one. 
+As it is now, you block on the read, then you're not reading while you're processing. 
+I think it might be better to separate those two.
+
+// buffer.length = 160
+// Hz=8000 (cycles per second)
+// 50 buffers a second
+// 0.02secs a buffer
+// 16 bytes=0.002secs
+// click audible for 0.001 seconds (8 bytes)
+// TODO make threshold double background level (as measured by mike)
+
+// 8000Hz,so 0.02s (160b) an audioChunk
+// Click is 0.001s so 8b

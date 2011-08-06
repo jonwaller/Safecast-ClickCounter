@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ClickCounter - Safecast.org</string>
+    <string name="app_desc">An application which listens to geiger counter clicks and calculates radiation levels. Collected data can be uploaded to safecast.org for public viewing.</string>
+    
+</resources>

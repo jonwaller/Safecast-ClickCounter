@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent" 
+    android:layout_width="fill_parent" android:orientation="vertical">
+    <TextView android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:includeFontPadding="true" android:textSize="60sp" android:text="0" android:id="@+id/textLcdDisplay"></TextView>
+    <TextView android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:includeFontPadding="true" android:id="@+id/textMeasurementMode"></TextView>
+     <RadioGroup
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+      <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:id="@+id/radioCount" android:text="Count"></RadioButton>
+    <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Clicks per minute (CPM)" android:id="@+id/radioCpm"></RadioButton>
+    <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/radioMsv" android:text="Microsieverts an hour (mSv/h)"></RadioButton>
+    </RadioGroup>
+     <Button android:layout_height="wrap_content" android:layout_width="fill_parent" android:id="@+id/buttonUpload" android:text="Upload reading"></Button>
+    <Button android:text="About" android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/buttonAbout"></Button>
+</LinearLayout>
